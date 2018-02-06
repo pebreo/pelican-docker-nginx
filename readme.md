@@ -36,7 +36,8 @@ $ docker-machine create \
 --digitalocean-size=1gb \ # 1gb default
 bloghost
 
-deval bloghost
+eval "$(docker-machine env bloghost)"
+
 docker-compose build
 docker-compose up -d
 
@@ -44,7 +45,7 @@ docker-compose up -d
 
 ## Pushing to Github pages
 ```bash
-$ cd pjebz.github.io
+$ cd site
 $ pelican content ; pushd output
 $ python -m pelican.server
 
