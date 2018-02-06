@@ -1,2 +1,2 @@
 FROM nginx
-COPY pelican /usr/share/nginx/html
+COPY pelican/site/output /usr/share/nginx/html

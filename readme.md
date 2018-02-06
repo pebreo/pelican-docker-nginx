@@ -11,18 +11,32 @@ $ pip install markdown
 ```
 $ mkdir pelican
 $ cd pelican
-$ mkdir pjebz.github.io
+$ mkdir site
 $ pelican-quickstart
 
 Choose no makefiles
+
+Make file in the 'content' directory called
+
+```
+
+# Generate html from pelican markdown
+```
+$ cd site
+$ pelican content ; pushd output
+$ python -m pelican.server
 ```
 
 
-## Pushing using docker-machine and docker compose
+## Publish html using docker-machine and docker compose
 ```
-docker-machine 
+$ docker-machine create \
+-d digitalocean \
+--digitalocean-access-token=ADD_YOUR_TOKEN_HERE \
+--digitalocean-size=1gb \ # 1gb default
+bloghost
 
-deval myhost1
+deval bloghost
 docker-compose build
 docker-compose up -d
 
