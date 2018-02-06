@@ -18,6 +18,16 @@ Choose no makefiles
 ```
 
 
+## Pushing using docker-machine and docker compose
+```
+docker-machine 
+
+deval myhost1
+docker-compose build
+docker-compose up -d
+
+```
+
 ## Pushing to Github pages
 ```bash
 $ cd pjebz.github.io

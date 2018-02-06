@@ -1,10 +1,9 @@
-version: "2"
+version: "2.1"
 
 services:
   web:
-    build:
-      dockerfile: Dockerfile
-    image: nginx-pelican:latest
+    build: . # build from Dockerfile
+    image: nginx-pelican:latest # created image name based on Dockerfile
     stdin_open: true
     tty: true
     restart: always
